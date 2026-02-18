@@ -28,3 +28,16 @@ Output size is calculated as :
  Calculating the number of parameters the formula is :
     (filter height * filter width * number of input channels + 1) * number of filters
     (fh * fw * Cin + 1) * N
+
+QnA: Let's say:
+Inpute : 32 x 32 x 3 [RGB image]
+Filter size : 5 x 5
+Number of filters: 6
+Stride = any value ( doesn't affect parameter count )
+Padding = any value ( doesn't affect parameter count )
+
+Ans: Parameters = (fh * fw * Cin + 1) * N
+                = (5 * 5 * 3 + 1) * 6
+                = (75 + 1) * 6
+                = 76 * 6
+                = 456 parameters
