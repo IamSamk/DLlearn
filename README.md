@@ -41,3 +41,26 @@ Ans: Parameters = (fh * fw * Cin + 1) * N
                 = (75 + 1) * 6
                 = 76 * 6
                 = 456 parameters
+
+Calculating the output when an image passes through a convolutional layer:
+Output size = ( (I - F + 2P) / s) + 1 * D
+Where:
+I = Input size (height and width of the input image)
+F = Filter size (height and width of the filter)
+S = Stride (the step size with which the filter moves across the image)
+P = Padding (the number of pixels added to the border of the image)
+D = Depth (number of filters) or number of output channels
+
+Example : 
+
+Image size: 32 x 32 x 3                      Image size: 32 x 32 x 3
+Filter size: 5 x 5                           Filter size: 5 x 5
+Number of filters: 6                         Number of filters: 6
+Stride: 1                                    Stride: 1
+Padding: 0                                   Padding: 2
+
+Without padding:                               With Padding:
+Output size = ( (32 - 5 + 2*0) / 1) + 1 * 6    Output size = ( (32 - 5 + 2*2) / 1) + 1 * 6
+            = (27 / 1) + 1 * 6                             = (31 / 1) + 1 * 6
+            = 28 * 6                                       = 32 * 6
+            = 28 x 28 x 6                                  = 32 x 32 x 6
